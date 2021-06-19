@@ -12,7 +12,7 @@ export default {
       username,
       password,
       type,
-      address
+      address,
     };
 
     const user = usersRepository.create(data);
@@ -20,5 +20,12 @@ export default {
     await usersRepository.save(user);
 
     return response.status(201).json(user);
+  },
+
+  async index(request: Request, response: Response) {
+    const userRepository = getRepository(User);
+
+    const user = await userRepository.find();
+    return response.json(user);
   },
 };

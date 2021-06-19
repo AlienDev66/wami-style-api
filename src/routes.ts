@@ -16,5 +16,6 @@ routes.delete("/product/:id", ProductsControllers?.delete);
 routes.post("/login", LoginControllers.create);
 
 routes.post("/user", UsersControllers.create);
+routes.get("/users", UsersControllers.index);
 
 export default routes;
